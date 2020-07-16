@@ -68,11 +68,22 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function cartItems()
+    {
+        return $this->hasMany(CartItem::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function addresses()
     {
         return $this->hasMany(UserAddress::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function favoriteProducts()
     {
         return $this->belongsToMany(Product::class, 'user_favorite_products')
