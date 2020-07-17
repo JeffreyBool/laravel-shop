@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use App\Models\ProductSku;
-use Illuminate\Foundation\Http\FormRequest;
 
-class AddCartRequest extends FormRequest
+class AddCartRequest extends Request
 {
     /**
      * Get the validation rules that apply to the request.
